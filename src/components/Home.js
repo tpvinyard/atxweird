@@ -88,9 +88,6 @@ export default function Home() {
                 <NavLink activeClassName="current" exact to="/keep-it-weird">
                     Keep It Weird
                 </NavLink>
-                <NavLink activeClassName="current" exact to="/what-weird-means">
-                    What Weird Means
-                </NavLink>
             </NavUnlisted>
             </Toolbar>
         </AppBar>
@@ -109,9 +106,6 @@ export default function Home() {
                 </Route>
                 <Route path="/keep-it-weird">
                     <KeepItWeird />
-                </Route>
-                <Route path="/what-weird-means">
-                    <WhyWeird />
                 </Route>
             </Switch>
         </Container>
