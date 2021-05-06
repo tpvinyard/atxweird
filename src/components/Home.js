@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -7,13 +7,12 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
 import {
-    BrowserRouter as Router,
+    HashRouter as Router,
     Switch,
     Route,
     Link as RouterLink,
     NavLink
   } from "react-router-dom";
-import WhyWeird from "./WhyWeird";
 import KeepItWeird from "./KeepItWeird";
 import Message from "./Message"
 import styled from 'styled-components'
@@ -57,8 +56,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     minHeight: '100vh',
     justifyContent: 'center',
-    alignItems: 'center',
-    background: '#d20f1f'
+    alignItems: 'center'
   },
   appBar: {
     borderBottom: `1px solid ${theme.palette.divider}`,
@@ -74,25 +72,26 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Home() {
   const classes = useStyles();
+  const [backgroundState, setBackgroundState] = useState('#d20f1f');
 
   return (
     <Router>
-      <div className={classes.mainSection}>
+      <div className={classes.mainSection} style={{background: backgroundState}}>
         <CssBaseline />
         <AppBar position="static" color="white" elevation={0} className={classes.appBar}>
             <Toolbar className={classes.toolbar}>
             <NavUnlisted>
-                <NavLink activeClassName="current" exact to="/">
+                <NavLink activeClassName="current" exact to="/" onClick={() => setBackgroundState('#d20f1f')}>
                     Weird?
                 </NavLink>
-                <NavLink activeClassName="current" exact to="/keep-it-weird">
+                <NavLink activeClassName="current" exact to="/keep-it-weird" onClick={() => setBackgroundState('#313235')}>
                     Keep It Weird
                 </NavLink>
             </NavUnlisted>
             </Toolbar>
         </AppBar>
         {/* Hero unit */}
-        <Container maxWidth="md" component="main">
+        <Container maxWidth="lg" component="main">
             {/*
                 A <Switch> looks through all its children <Route>
                 elements and renders the first one whose path
@@ -112,7 +111,7 @@ export default function Home() {
         {/* Footer */}
         <Container component="footer" className={classes.footer}>
             <Box mt={2} mb={2}>
-                <Copyright />
+                {/* <Copyright /> */}
             </Box>
         </Container>
         {/* End footer */}

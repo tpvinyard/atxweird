@@ -4,10 +4,11 @@ import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles((theme) => ({
     main: {
-        marginTop: '25vh'
+        marginTop: '22vh'
     },
     mainText: {
-        fontSize: '20vh',
+        fontSize: '30vh',
+        fontFamily: 'GoodDog Plain',
         color: '#F5F5F5'
     }
 

@@ -11,3 +11,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+  font-family: 'GoodDog Plain';
+  src: local('GoodDog Plain'), url(./fonts/GOODDP__.TTF) format('truetype');
+}
