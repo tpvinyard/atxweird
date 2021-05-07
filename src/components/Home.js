@@ -15,7 +15,8 @@ import {
   } from "react-router-dom";
 import KeepItWeird from "./KeepItWeird";
 import Message from "./Message"
-import styled from 'styled-components'
+import styled from 'styled-components';
+import { SocialIcon } from 'react-social-icons';
 
 function Copyright() {
   return (
@@ -67,7 +68,7 @@ const useStyles = makeStyles((theme) => ({
   },
   footer: {
     marginTop: 'auto',
-  },
+  }
 }));
 
 export default function Home() {
@@ -80,14 +81,15 @@ export default function Home() {
         <CssBaseline />
         <AppBar position="static" color="white" elevation={0} className={classes.appBar}>
             <Toolbar className={classes.toolbar}>
-            <NavUnlisted>
-                <NavLink activeClassName="current" exact to="/" onClick={() => setBackgroundState('#d20f1f')}>
-                    Weird?
-                </NavLink>
-                <NavLink activeClassName="current" exact to="/keep-it-weird" onClick={() => setBackgroundState('#313235')}>
-                    Keep It Weird
-                </NavLink>
-            </NavUnlisted>
+              <NavUnlisted>
+                  <NavLink activeClassName="current" exact to="/" onClick={() => setBackgroundState('#d20f1f')}>
+                      Weird?
+                  </NavLink>
+                  <NavLink activeClassName="current" exact to="/keep-it-weird" onClick={() => setBackgroundState('#313235')}>
+                      Keep It Weird
+                  </NavLink>
+              </NavUnlisted>
+              <SocialIcon url="https://twitter.com/isaustinweird" target="_blank" network="twitter" fgColor="white" style={{ height: 30, width: 30, margin: '0 0 0 10px' }}/>
             </Toolbar>
         </AppBar>
         {/* Hero unit */}
